@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery AJAX</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script type="text/javascript" src="./js/jq_007.js"></script>
+<!-- 
+	Asynchronous Javascript And Xml
+	: 비동기식과 동기식의 경우, 값을 화면에 출력하기 위해서는 바인딩(binding) 해야 한다
+	  서버(ws)를 통해서 다음 화면을 html로 요청하여 다시 브라우저가 랜더링(인터프리터)하여 재구성한다 => MPA(Multiful Page Application)
+	  
+	  하지만 MPA의 단점은 A에서 B로 이동할 때 값을 유지하지 못한다(전달만 가능, 전달하면 끝)
+	  따라서 비동기식 처리를 통해, 페이지의 특정한 부분을 javascript를 통해 데이터만 교체하는 방식 => SPA(Single Page Application)
+	  
+	  비동기식으로 받은 데이터의 유형(text, JSON, XML, MAP, csv.. 등)
+	  -> Simple-json.jar, GSON, Jackson-Bind.jar 등 사용..
+ -->
+ 
+</head>
+<body>
+	<h2>데이터 가져오기(XML)</h2>
+	<fieldset>
+		<legend>사원번호 조회</legend>
+		<input type="text" name="empId" id="empId">
+		<input type="button" value="조회" id="emp_search">
+	</fieldset>
+	
+	<table>
+		<tbody>
+			<tr>
+				<th>사원번호</th>
+				<td>
+					<input type="text" name="empNum">
+				</td>
+			</tr>
+			<tr>
+				<th>이름</th>
+				<td>
+					<input type="text" name="lastName">
+				</td>
+			</tr>
+			<tr>
+				<th>이메일</th>
+				<td>
+					<input type="text" name="email">
+				</td>
+			</tr>
+			<tr>
+				<th>전화번호</th>
+				<td>
+					<input type="text" name="phone">
+				</td>
+			</tr>
+			<tr>
+				<th>입사일</th>
+				<td>
+					<input type="text" name="hire">
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

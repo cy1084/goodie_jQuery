@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+img {
+	width: 100px;
+	height: 100px;
+}
+</style>
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script type="text/javascript" src="./js/jq_003.js"></script>
+</head>
+<body>
+	<fieldset>
+		<legend>요구사항에 맞춰 아래의 table에서 기능 실행시키기</legend>
+		<h3>1. 이미지의 크기를 모두 300px * 300px로 설정하기</h3>
+		<button onclick="imgSize()">클릭</button>
+		<h3>2. 이미지 중 id가 selId인 태그를 찾아서 숨기기</h3>
+		<button onclick="idSelector()">클릭</button>
+		<h3>3. 이미지 중 class가 selClass인 태그를 찾아서 투명도(opacity)를 0.3으로 지정하기</h3>
+		<button onclick="classSelector()">클릭</button>
+		<h3>4. 이미지 바꾸기(td의 자식요소 img만 선택해서 바꾸기)</h3>
+		<button onclick="changeImg()">클릭</button>
+		<h3>5. 이미지의 속성 값으로 탐색하여 slideUp 기능 적용하기(title 속성 중 '02'를 포함하고 있는 img 태그만을 선택) </h3>
+		<button onclick="propSelector()">클릭</button>
+	</fieldset>
+	<table>
+		<tr>
+			<td><img id="selId" title="img01" src="./img/img01.png"></td>
+			<td><img title="img02" src="./img/img01.png"></td>
+			<td><img class="selClass" title="img03" src="./img/img01.png"></td>
+			<td><img class="selClass" title="img04" src="./img/img01.png"></td>
+		</tr>
+		<tr>
+			<td><img id="selId" title="img01" src="./img/img01.png"></td>
+			<td><span><img title="img02" src="./img/img01.png"></span></td>
+			<td><img class="selClass" title="img03" src="./img/img01.png"></td>
+			<td><img class="selClass" title="img04" src="./img/img01.png"></td>
+		</tr>
+	</table>
+
+</body>
+</html>

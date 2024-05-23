@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery</title>
+<!-- 코드가 짧지만 기능이 좋지는 않은 jQuery.. -->
+<!--
+	 jQuery는 javascript 이벤트 기능과 css의 style 기능을 만들어 놓은 javascript 라이브러리
+	 nodejs는 npm(node package manager)을 통해서 동작
+	 html에서는, 파일을 WS에 가지고 있는 javascript linked 방식과 외부 WS 요청 CDN 방식
+	 
+ -->
+
+<!--
+	jQuery와 같은 외부 라이브러리를 사용할 때는 오버라이드 문제로, 작성한 기능이 동작 안할 수 있기 때문에 
+	반드시 최상단에 라이브러리를 선언해서 사용! 
+-->
+
+
+<!-- 1) cdn 방식 -->
+<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.js"></script> -->
+
+<!-- 2) js 파일에 .js 파일 넣는 방법 -->
+<script type="text/javascript" src="./js/jquery-3.7.1.js"></script>
+<script type="text/javascript">
+	/*
+	 jQuery의 기본 작성 방법: selector 표현식(css 방식)=> querySelector() & querySelectorAll()
+	 작성 예시)
+	 $("#id or [.class] or [div]")= document.getElement[s]By~~Id[name,tagName]
+	 $("p").eq(0).css("color","red");
+	 document.getElementsByTagName("p")[0].style.color="red"; 와 같음!
+	
+	
+	 onload 구현방법
+	 - javascript
+	 : window.onload=function(){}  or  onload=function(){}
+	 - jQuery
+	 : $(document).ready(function(){}) or $(function(){})
+	
+	 *** javascript onload는 override 되기 때문에 마지막에 선언된 onload가 실행
+	 하지만 jQuery onload는 순서대로 실행!
+	
+	 */
+	/* jQuery는 끝에 ; 필수 */
+	
+	$(function() {
+		$("img").click(function() {
+			console.log("이미지 클릭", this);
+			$(this).hide(); //이미지 사라짐
+		});
+	});
+
+	//javascript로 바꾸면!
+// 	onload = function() {
+// 		var img = document.getElementsByTagName("img")[0];
+// 		img.onclick = function() {
+// 			this.style.display = "none";
+// 		}
+// 	}
+	
+function imgSize(){
+	/* 
+		jQuery에서의 index=> eq 
+		jQuery의 탐색은 nodelist와 node를 구분하지 않는다
+		때문에 index 설정을 안하면 탐색된 결과에 모두 적용된다
+		복합으로 특정한 값을 사용할 때는 {}를 사용하고 형태는 JSON 형태로 된다.
+	*/
+	
+// 	$("img").css("width","150px");
+// 	$("img").css("opacity","0.3"); //투명도
+	
+	//위와 같음
+	$("img").css({"width":"150px","opacity":"0.5"});
+}
+
+function highlight(){
+	//javascript
+// 	var li=document.getElementsByTagName("li");
+// 	li[1].style.backgroundColor="orange";
+	
+	//부모탐색을 통한~
+// 	var ul=document.getElementsByTagName("ul")[0];
+// 	ul.children[1].style.backgroundColor="orange";
+
+	//선택자를 통한 jQuery 탐색
+	$("ul>li:eq(1)").css("backgroundColor","orange");
+}
+
+function addImg(){
+	//img 태그 중에서 마지막 태그를 찾아서 새로운 이미지를 추가
+	//javascript
+	//이미지 찾고
+	//parentNode 찾고
+	//img 태그 append
+	
+	//var div=document.createElement("div"); //javascript
+	//var $div=$("<div>"); //jquery
+	
+	$("img").last().after("<img src='./img/img02.png'>").attr("title","그림").attr("title","개구리");
+	//attr이 적용되는 애는 dom 탐색된 img01 !! img02에 속성이 추가되는게 아님!!
+	//img02가 추가되고, 속성 적용은 바로 전 img01에!
+	//title 오버라이드
+	$("img").prop("title","포켓몬"); 
+}
+
+function hideImg(){
+	// display 속성과는 다르게 동작되는 toggle 형식
+	$("img").toggle();
+}
+
+function showImg(){
+	$("img").show(1000);	
+}
+</script>
+</head>
+<body>
+	<fieldset>
+		<legend>기능예제</legend>
+		<div>
+			<ul>
+				<li><button onclick="imgSize()">이미지 변경하기</button></li>
+				<li><button onclick="highlight()">리스트 강조하기</button></li>
+				<li><button onclick="addImg()">이미지 추가하기</button></li>
+				<li><button onclick="hideImg()">이미지 숨기기</button></li>
+				<li><button onclick="showImg()">이미지 보이기</button></li>
+			</ul>
+		</div>
+		<div>
+			<img src="./img/img01.png">
+		</div>
+	</fieldset>
+	
+	<h2>jQuery 목차</h2>
+	<ul id="list">
+		<li>1. 셀렉터 표현식- 가장 중요!</li>
+		<li>2. DOM 탐색 메소드- 중요</li>
+		<li>3. DOM 처리 메소드- 중요</li>
+		<li>4. 이벤트 메소드</li>
+		<li>5. effect 메소드</li>
+		<li>6. AJAX 메소드- 중요</li>
+		<li>7. 기타 이벤트</li>
+	</ul>
+
+</body>
+</html>

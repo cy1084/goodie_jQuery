@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM 탐색- 여기있는 것 가장 많이 사용!</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script type="text/javascript" src="./js/jq_010.js"></script>
+</head>
+<body>
+	<pre>
+		<b>find("선택자"): 선택한 element의 자식들 중 탐색하고자 하는 element 찾음</b>
+		<b>children("선택자"): 선택한 element의 자식들 중 탐색하고자 하는 element 찾음</b>
+		<b>parent() / parents("선택자"): 선택한 element의 부모 tag를 찾음</b>
+		<!-- parent 바로 위 노드! -->
+		<!-- parents 부모 노드들 중 찾고 싶은 노드 찾기! -->
+		<b>next(): 선택한 element의 다음(siblings)에 따라오는 element를 찾음</b>
+		<!-- 같은 등급에 있는 태그 찾아줌 -->
+	</pre>
+	<div>
+		<div><b>1</b></div>
+		<div id="id">2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+	</div>
+</body>
+</html>

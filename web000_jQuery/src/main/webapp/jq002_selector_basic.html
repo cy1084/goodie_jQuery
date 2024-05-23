@@ -1,0 +1,39 @@
+<!-- 내가 만든 template 사용! -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Selector를 통한 탐색</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script type="text/javascript" src="./js/jq_002.js"></script>
+</head>
+<body>
+	<fieldset>
+		<legend>Selector 표현식</legend>
+		<ul class="sub_menu">
+			<li><span>		tag로 선택하기</span></li>
+			<li id="t1">	id로 선택하기</li>
+			<li name="parent" class="t2"> class로 선택하기</li>
+			<li><span>		Parent Child로 선택하기</span></li>
+			<li><b><span>	Parent > Child로 선택하기</span></b></li>
+			<li>			:nth-child(n/even/odd)로 선택하기</li>
+			<li>			:first-child로 선택하기</li>
+			<li>			:last-child로 선택하기</li>
+		</ul>
+	</fieldset>
+	<fieldset>
+		<button onclick="a1()">	tag로 선택하기</button>
+		<button onclick="a2()">	id로 선택하기</button>
+		<button onclick="a3()">	class로 선택하기</button>
+		<button onclick="a4()">	Parent Child로 선택하기</button>
+		<button onclick="a5()">	Parent > Child로 선택하기</button>
+		<button onclick="a6()">	:nth-child(n/even/odd)로 선택하기</button>
+		<button onclick="a7()">	:first-child로 선택하기</button>
+		<button onclick="a8()">	:last-child로 선택하기</button>
+		<div>코드 내용
+			<div id="view"></div>
+		</div>
+	</fieldset>
+
+</body>
+</html>
